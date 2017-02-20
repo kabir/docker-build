@@ -30,9 +30,11 @@ ln -s /mapped/git-clones/ /home/user/git-clones
 # Make everything under the user directory visible to the user
 chown -R user:user /home/user
 
+# Go to the clones directory
+cd /home/user/git-clones
+
+
 export HOME=/home/user
 /usr/local/bin/gosu user "$@"
 
-cd /user/home
-cd git-clones
 
