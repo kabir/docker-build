@@ -17,10 +17,10 @@ useradd --shell /bin/bash -u $USER_ID -o -c "" -m user
 # the host OS, so we can read them and link from the home dir
 chown -R user:user /mapped
 
-#Create the user's .m2 directory, we'll map settings.xml and the repository later
+# Create the user's .m2 directory, we'll map settings.xml and the repository later
 mkdir /home/user/.m2
 
-#link folders
+# link folders
 ln -s /mapped/.ssh /home/user/.ssh
 ln -s /mapped/.gitconfig /home/user/.gitconfig
 ln -s /mapped/mvn-settings.xml /home/user/.m2/settings.xml 
@@ -29,6 +29,10 @@ ln -s /mapped/git-clones/ /home/user/git-clones
 
 # Make everything under the user directory visible to the user
 chown -R user:user /home/user
+
+
+# Alias vi to vim
+ln -s /usr/bin/vi /usr/bin/vim
 
 # Go to the clones directory
 cd /home/user/git-clones
