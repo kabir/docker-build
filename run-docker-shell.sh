@@ -4,6 +4,12 @@
 docker volume create --name maven-build-mvn-repo
 docker volume create --name maven-build-clones
 
+cmd="$@"
+
+if [ -z "$@" ]; then
+    cmd="bash"
+fi
+
 docker run \
 	-v ~/.ssh:/mapped/.ssh \
 	-v ~/.gitconfig:/mapped/.gitconfig \
@@ -12,5 +18,5 @@ docker run \
 	-v maven-build-clones:/mapped/git-clones \
 	-e LOCAL_USER_ID=`id -u $USER` \
 	-it maven-build \
-        bash	
+        $cmd	
 
