@@ -15,4 +15,4 @@ if [ "x$TO_VERSION" = "x" ]; then
 fi
 
 
-find . -type f -name "pom.xml" -print0 | xargs -0 -t sed -i "" -e 's/$1/$2/g'
+find . -type f -name "pom.xml" -print0 | xargs -0 -t sed -i "" -e "s/$FROM_VERSION/$TO_VERSION/g"
