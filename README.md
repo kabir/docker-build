@@ -1,4 +1,4 @@
-# wfcore-release-docker
+# docker-maven-build
 Docker job with all the bits set up to do a maven build. It has a totally separate local maven repository from your host OS, and a separate folder for your git clones. These locations are stored on shared Docker volumes, so they can be shared amongst containers and will survive bouncing the containers.
 
 To build the image, run the `./build-docker-shell.sh` script. Do so from within the folder where you have cloned this git repository. It might take some time the first time you do this. 
